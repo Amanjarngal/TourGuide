@@ -152,9 +152,12 @@
     </nav>
   </div>
 
-
-  <section class="trip" id="trip">
+<div class="container">
+   <section class="trip" id="trip">
     <div class="section__container trip__container">
+      <div class="ser">
+        
+      </div>
       <h2 class="section__title">Best trip package</h2>
       <p class="section__subtitle">
         Explore your suitable and dream places around the world. Here you can find your right destination.</p>
@@ -170,6 +173,7 @@
       </select>
       
       <!-- search button html -->
+      
       <form onsubmit="search(event)" class="search-bar"> 
         <input type="text" id ="find" placeholder="search places" onkeyup="search()" name="q">
         <button type="submit" value="search" ><b>GO!</b></button>
@@ -233,6 +237,80 @@
         background:#ffffffb8;
         cursor: pointer;
       }
+      .trip__grid{
+          display: flex;
+          flex-wrap: wrap;
+          padding-left: 100px;
+        }
+        
+      @media (max-width:568px) {
+        .trip__grid{
+          display: flex;
+          flex-wrap: wrap;
+          /* padding-left: 400px; */
+        }
+        .trip__card{
+          display: flex;
+          flex-wrap: wrap;
+          max-width:40rem;
+         ;
+          
+        }
+        .search-bar{
+        width: 140  px;
+        margin-right: 440px;
+        max-width: 20%;
+        margin-left: 0rem;
+    }
+     .price-filter{
+      width:3rem;
+      margin-right:4rem;
+     }
+    .nav-container{
+      width: 16rem;
+      
+    }
+
+    .newNav{
+    
+    height: 150px;
+    width: 36rem;
+  
+  } 
+  .toggle-container{
+    position: relative;
+    /* top: -0.1rem;
+    left:10px;
+    right: 374px; */
+    top:80px;
+    left: -15rem;
+  }
+  
+  .nav__logo{
+  margin-right: 10rem;
+  top: -2rem;
+  }
+  .hamburger{
+    /* top: 0.1rem;
+    right: 10rem; */
+    margin-right:-8rem;
+    top: 2rem;
+  }
+  .contact-btn{
+    position: relative;
+    /* top: 80px;
+    right: 250px; */
+    margin-top: -6rem;
+   
+  }
+  .navLinks {
+     margin-top:5rem;
+   
+  }
+  .section__title{
+    margin-top: 5rem;
+  }
+  }
     </style>
 
      <!--javascript for functionality of search button-->
@@ -275,8 +353,8 @@ function filterProducts() {
 </script>
 
       <!-- end of search button -->
-        
-      <div class="trip__grid">
+        <div class="container">
+          <div class="trip__grid">
 
         <div class="trip__card">
           <img src="https://i.ibb.co/60nvYwQ/Screenshot-2023-07-14-173347.png" alt="trip" height="250" width="45" />
@@ -416,10 +494,14 @@ function filterProducts() {
           </div>
         </div>
       </div>
+        </div>
+      
 
 
     </div>
   </section>
+</div>
+ 
 
 
 

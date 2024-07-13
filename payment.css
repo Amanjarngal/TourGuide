@@ -268,7 +268,12 @@ header {
     font-size: 0.6rem;
   }
 }
-
+@media screen and (max-width:500px){
+.newNav{
+  padding-left: 180px;
+  padding-right: 150px;
+}
+}
 .navLinks.activeHamburger {
   width: 100%;
 }

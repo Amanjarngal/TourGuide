@@ -169,6 +169,7 @@ header {
 }
 
 @media screen and (max-width: 1220px) {
+ 
   .hamburger {
     display: flex;
     cursor: pointer;
@@ -202,6 +203,18 @@ header {
     font-size: 0.6rem;
   }
 }
+
+@media screen and (max-width: 500px){
+  .line {
+    width: 30px;
+  }
+  .navLinks {
+    height:55vh;
+  }
+.link{
+  text-align: center;
+}
+} 
 
 .navLinks.activeHamburger {
   width: 100%;

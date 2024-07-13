@@ -169,24 +169,7 @@ body{
     <div id="scrollPath"></div>
 
 
-    <!-- <canvas id="canvas"></canvas> -->
-    <!-- <nav>
-
-    <a href="#" class="nav__logo" data-aos="fade-right">Tourguide<span>.</span></a>
-    <ul class="nav__links">
-      <li class="link" data-aos="fade-down"><a href="#Home">Home</a></li>
-      <li class="link" data-aos="fade-down"><a href="#AboutUs">About Us</a></li>
-      <li class="link" data-aos="fade-down"><a href="#Destinations">Destinations</a></li>
-      <li class="link" data-aos="fade-down"><a href="#trip">Pricing</a></li>
-      <li class="link" data-aos="fade-down"><a href="#testimonials">Testimonials</a></li>
-      <li class="link" data-aos="fade-down"><a href="#ReviewGallery">Reviews</a></li>
-      <li class="link" data-aos="fade-down"><a href="feedback.html">Rate Us?</a></li>
-      <li class="link" data-aos="fade-down"><a href="login.html">Login</a></li>
-
-    </ul>
-    <button id="toggle" data-aos="fade-down">Dark Theme</button>
-    <a href="#contact"><button class="btn" id="btn-style">Contact Us</button></a>
-  </nav> -->
+    
     <div class="nav-container" id="top">
       <nav class="newNav">
         <img src="./img/A T logo with a white background and a square shape, connected to nature for a travel company.png" style="width:30px;height:30px;border-radius:50%;">
@@ -206,7 +189,7 @@ body{
         </ul>
 
 
-        <a href="newLogin.html" class="contact-btn"><button class="btn login" id="btn-style"
+        <a href="newLogin.html" class="contact-btn" ><button class="btn login" id="btn-style"
             data-aos="fade-down">Login/SignUp</button></a>
 
         <!-- <a href="mapa.html" class="contact-btn"><button class="btn" id="btn-style" style="margin: 0;"
@@ -218,14 +201,17 @@ body{
         <!-- <a href="login-modified.html" class="contact-btn"><button class="btn" id="btn-style"
             style="margin: 0; box-shadow:1.5px 1.5px 6px red;" data-aos="fade-down">Login</button></a> -->
 
+            <!-- NIGHT MODE AND DARK MODE CHANGER -->
         <div class="toggle-container" data-aos="fade-down">
           <input id="themeToggle" class="toggle" type="checkbox">
         </div>
+
         <div class="hamburger" data-aos="fade-down">
           <div class="line"></div>
           <div class="line"></div>
           <div class="line"></div>
         </div>
+
       </nav>
     </div>
 
@@ -252,8 +238,8 @@ body{
               <button class="btn" data-aos="fade-in" id="btn-style" onclick="planTrip()"
                 style="box-shadow: 2px 2px 8px red;">Plan a Trip</button>
                 
-              <a href="./payment.html"><button class="btn" data-aos="fade-in" id="btn-style"
-                  style="box-shadow: 2px 2px 8px red;">Book Now</button></a>
+              <!-- <a href="./payment.html"><button class="btn" data-aos="fade-in" id="btn-style"
+                  style="box-shadow: 2px 2px 8px red;">Book Now</button></a> -->
             </div>
 
               
@@ -422,7 +408,7 @@ body{
         <div class="cross-container">
           <i class="fas fa-times close-btn" onclick="closeModal()"></i>
         </div>
-        <div class="modal-newsletter">
+        <!-- <div class="modal-newsletter">
           <div class="modal-header">
             <div style="display: flex;flex-flow: column;">
               <a href="#" class="nav__logo"
@@ -442,7 +428,7 @@ body{
               via
               email and can unsubscribe at any time.</span>
           </div>
-        </div>
+        </div> -->
         <div>
           <img src="./img/pexels-sam-kolder-2387871.jpg" class="modal-image" alt="maldives">
         </div>
@@ -598,8 +584,7 @@ body{
           </div>
         </div>
         <div class="view__all">
-          <a href="./package.html"><button class="btn " id="btn-style" style="box-shadow: 2px 2px 8px red;">View
-              All</button></a>
+          <a href="./package.html"><button class="btn " id="btn-style" style="box-shadow: 2px 2px 8px red;">View All</button></a>
               <br>
               <br>
             <a href="trending.html"><button class="btn" id="btn-style" style="box-shadow: 2px 2px 8px red;">View Trending</button></a>
@@ -643,16 +628,16 @@ $('.carousel').flipster({
   <div class="section__container gallary__container">
     <div class="section__container gallary__container" id="originalDiv">
       <div class="gallary__content">
-        <div class=" col-span-2 mx-auto lg:mx-0 lg:text-left" >
-          <h2 class="section__title" data-aos="zoom-in" style="text-align: center;">
+        <div class=" col-span-2 mx-auto lg:mx-0 lg:text-left" id="new" >
+          <h2 class="section__title" id="gall" data-aos="zoom-in" style="text-align: center;">
             Our trip gallery that will inspire you
           </h2>
-          <p class="section__subtitle" data-aos="zoom-in">
+          <p class="section__subtitle" id="sub" data-aos="zoom-in">
             Visual Stories of Adventure to Spark Your Imagination.<br>
             Get inspired for your next journey.
           </p>
-          <button class="btn btn-style" id="btn-page" onclick="replaceDivs()" data-aos="zoom-in"
-            style="box-shadow: 2px 2px 8px rgb(0, 191, 255);">View All</button>
+          <button class="btn btn-style " id="btn-page" onclick="replaceDivs()" data-aos="zoom-in"
+            style="box-shadow: 2px 2px 8px rgb(20, 23, 24);">View All</button>
         </div>
       </div>
     </div>
@@ -954,48 +939,7 @@ $('.carousel').flipster({
 
 
 
-    <!--------------------------------------- Updated Contact Us Section ----------------------------------------------->
-
-    <!-- <section class="contact" id="contact">
-    <h2 class="section__title" align-items="center" data-aos="slide-right">Contact Us</h2>
-    <div class="contact-form" data-aos="fade-in">
-      <div class="left">
-        Add your image here
-        <img src="./img/flat-design-illustration-customer-support_23-2148887720.avif" alt="Contact Image"
-          style="max-width: 100%; width: 500px;">
-      </div>
-      <div class="right">
-        <form>
-          <div class="mb-3">
-
-            <label for="exampleInputName" style="color:black;">Name</label>
-            <input type="text" class="form-control" id="exampleInputName" placeholder="Enter your name">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail2" style="color:black;">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
-              placeholder="Enter your email">
-            <div id="emailHelp" style="color:black;">We'll never share your email with anyone else.</div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputMessage" style="color:black;">Message</label>
-
-            <textarea class="form-control" id="exampleInputMessage" rows="4"
-              placeholder="feel free to ask your queries!"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" onclick="sendMail()">Submit</button>
-        </form>
-        <br>
-        <button type="submit" class="btn btn-primary" onclick="window.location.href='feed.html'">
-          Go to Feedback Page
-        </button>
-      </div>
-    </div>
-
-
-
-  </section> -->
-
+   
     <section>
       <div class="container" id="cnt-form">
         <div class="items">
@@ -1097,15 +1041,8 @@ $('.carousel').flipster({
             Start planning your dream trip with us and explore the world.
           </p>
         </div>
-        <div class="footer__col">
-          <div class="footer__area">
-            <h4 class="footer-head" class="footer__subtitle">Support</h4>
-          <p><a href="./faq.html" class="footer__link">FAQs</a></p>
-          <p><a href="./tnc.html" class="footer__link">Terms & Conditions</a></p>
-          <p><a href="./privacy.html" class="footer__link">Privacy Policy</a></p>
-          <p><a href="#cnt-form" class="footer__link">Contact Us</a></p>
-          </div>
-        </div>
+       
+
         <div class="footer__col">
           <p>Social Media</p>
           <section class="social-icon d-flex ">
@@ -1149,12 +1086,12 @@ $('.carousel').flipster({
             </div>
             <div class="d-flex align-items-center">
               <span class="mr-2">Phone :</span>
-              <a href="tel:8562145852" class="text-nowrap">+91 8562145852</a>
+              <a href="tel:7780936720" class="text-nowrap">+91 7780936720</a>
             </div>
           </div>
         
         </div>
-        <div class="footer__col">
+        <!-- <div class="footer__col">
           <div class="footer__area">
             <h4 class="footer-head" style="margin-left: -43px;" >Follow Us</h4>
             <br>
@@ -1177,8 +1114,8 @@ $('.carousel').flipster({
                 <i class="fab fa-linkedin-in"></i> 
               </a>
             
-          </div>
-        </div>
+          </div> -->
+        <!-- </div> -->
         
         <div class="footer__col">
           <div id="google_element"></div>
@@ -1196,15 +1133,11 @@ $('.carousel').flipster({
       <!--  New copyright code to make it dynamic and display current year -->
       <div class="footer__bar">
         <div>
-          <li>Copyright &copy;<span id="year"></span> </span> Arpan Chowdhury. All rights reserved. </li>
+          <li>Copyright &copy;<span id="year"></span> </span> Aman Jarngal. All rights reserved. </li>
         </div>
       </div>
 
-      <!--   Previous copyright code
-<!--  <div class="footer__bar">
-        Copyright © 2023 Arpan Chowdhury. All rights reserved.
-      </div> -->
-
+     
     </footer>
 
     <a class="goupbtn" href="#" onclick="goToTop()"><i class="fa-solid fa-arrow-up"></i></a>
@@ -1317,292 +1250,11 @@ $('.carousel').flipster({
 
 
 
-    <!-- Start of Conferbot Script
-
-    <script type="text/javascript">
-        (function (d, s, id) {
-          var js, el = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s);
-          js.async = true;
-          js.src = 'https://s3.ap-south-1.amazonaws.com/conferbot.defaults/dist/v1/widget.min.js';
-          js.id = id;
-          js.charset = 'UTF-8';
-          el.parentNode.insertBefore(js, el);
-          js.onload = function () {
-            var w = window.ConferbotWidget("65b80765988633d43148e80e", "live_chat");
-          };
-        })(document, 'script', 'conferbot-js');
-    </script>
-    End of Conferbot Script
-  -->
-
-
-
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!--
-    <script>
-      (function ($) {
-        var isDarkMode = false; // Assuming initially in light mode
-
-        var canvas = $('#bg').children('canvas'),
-          background = canvas[0],
-          foreground1 = canvas[1],
-          foreground2 = canvas[2],
-          config = {
-            circle: {
-              amount: 18,
-              layer: 3,
-              color: [157, 97, 207],
-              alpha: 0.3
-            },
-            line: {
-              amount: 12,
-              layer: 3,
-              color: [255, 255, 255],
-              alpha: 0.3
-            },
-            speed: 0.5,
-            angle: 20
-          };
-
-        if (background.getContext) {
-          var bctx = background.getContext('2d'),
-            fctx1 = foreground1.getContext('2d'),
-            fctx2 = foreground2.getContext('2d'),
-            M = window.Math, // Cached Math
-            degree = config.angle / 360 * M.PI * 2,
-            circles = [],
-            lines = [],
-            wWidth, wHeight, timer;
-
-          requestAnimationFrame = window.requestAnimationFrame ||
-            window.mozRequestAnimationFrame ||
-            window.webkitRequestAnimationFrame ||
-            window.msRequestAnimationFrame ||
-            window.oRequestAnimationFrame ||
-            function (callback, element) { setTimeout(callback, 1000 / 60); };
-
-          cancelAnimationFrame = window.cancelAnimationFrame ||
-            window.mozCancelAnimationFrame ||
-            window.webkitCancelAnimationFrame ||
-            window.msCancelAnimationFrame ||
-            window.oCancelAnimationFrame ||
-            clearTimeout;
-
-          var setCanvasHeight = function () {
-            wWidth = $(window).width();
-            wHeight = $(window).height(),
-
-              canvas.each(function () {
-                this.width = wWidth;
-                this.height = wHeight;
-              });
-          };
-
-          var drawCircle = function (x, y, radius, color, alpha) {
-            var gradient = fctx1.createRadialGradient(x, y, radius, x, y, 0);
-            gradient.addColorStop(0, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + alpha + ')');
-            gradient.addColorStop(1, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + (alpha - 0.1) + ')');
-
-            fctx1.beginPath();
-            fctx1.arc(x, y, radius, 0, M.PI * 2, true);
-            fctx1.fillStyle = gradient;
-            fctx1.fill();
-          };
-
-          var drawLine = function (x, y, width, color, alpha) {
-            var endX = x + M.sin(degree) * width,
-              endY = y - M.cos(degree) * width,
-              gradient = fctx2.createLinearGradient(x, y, endX, endY);
-            gradient.addColorStop(0, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + alpha + ')');
-            gradient.addColorStop(1, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + (alpha - 0.1) + ')');
-
-            fctx2.beginPath();
-            fctx2.moveTo(x, y);
-            fctx2.lineTo(endX, endY);
-            fctx2.lineWidth = 3;
-            fctx2.lineCap = 'round';
-            fctx2.strokeStyle = gradient;
-            fctx2.stroke();
-          };
-
-          var drawBack = function () {
-            bctx.clearRect(0, 0, wWidth, wHeight);
-
-            var gradient = [];
-
-            if (isDarkMode) {
-              gradient[0] = bctx.createRadialGradient(wWidth * 0.3, wHeight * 0.1, 0, wWidth * 0.3, wHeight * 0.1, wWidth * 0.9);
-              gradient[0].addColorStop(0, '#0e1525');
-              gradient[0].addColorStop(1, 'transparent');
-
-              bctx.translate(wWidth, 0);
-              bctx.scale(-1, 1);
-              bctx.beginPath();
-              bctx.fillStyle = gradient[0];
-              bctx.fillRect(0, 0, wWidth, wHeight);
-            } else {
-              gradient[0] = bctx.createRadialGradient(wWidth * 0.3, wHeight * 0.1, 0, wWidth * 0.3, wHeight * 0.1, wWidth * 0.9);
-              gradient[0].addColorStop(0, 'rgb(0, 26, 77)');
-              gradient[0].addColorStop(1, 'transparent');
-
-              bctx.translate(wWidth, 0);
-              bctx.scale(-1, 1);
-              bctx.beginPath();
-              bctx.fillStyle = gradient[0];
-              bctx.fillRect(0, 0, wWidth, wHeight);
-            }
-
-            gradient[1] = bctx.createRadialGradient(wWidth * 0.1, wHeight * 0.1, 0, wWidth * 0.3, wHeight * 0.1, wWidth);
-            gradient[1].addColorStop(0, 'rgb(0, 150, 240)');
-            gradient[1].addColorStop(0.8, 'transparent');
-
-            bctx.translate(wWidth, 0);
-            bctx.scale(-1, 1);
-            bctx.beginPath();
-            bctx.fillStyle = gradient[1];
-            bctx.fillRect(0, 0, wWidth, wHeight);
-
-            gradient[2] = bctx.createRadialGradient(wWidth * 0.1, wHeight * 0.5, 0, wWidth * 0.1, wHeight * 0.5, wWidth * 0.5);
-            gradient[2].addColorStop(0, 'rgb(40, 20, 105)');
-            gradient[2].addColorStop(1, 'transparent');
-
-            bctx.beginPath();
-            bctx.fillStyle = gradient[2];
-            bctx.fillRect(0, 0, wWidth, wHeight);
-          };
-
-          var animate = function () {
-            var sin = M.sin(degree),
-              cos = M.cos(degree);
-
-            if (config.circle.amount > 0 && config.circle.layer > 0) {
-              fctx1.clearRect(0, 0, wWidth, wHeight);
-              for (var i = 0, len = circles.length; i < len; i++) {
-                var item = circles[i],
-                  x = item.x,
-                  y = item.y,
-                  radius = item.radius,
-                  speed = item.speed;
-
-                if (x > wWidth + radius) {
-                  x = -radius;
-                } else if (x < -radius) {
-                  x = wWidth + radius
-                } else {
-                  x += sin * speed;
-                }
-
-                if (y > wHeight + radius) {
-                  y = -radius;
-                } else if (y < -radius) {
-                  y = wHeight + radius;
-                } else {
-                  y -= cos * speed;
-                }
-
-                item.x = x;
-                item.y = y;
-                drawCircle(x, y, radius, item.color, item.alpha);
-              }
-            }
-
-            if (config.line.amount > 0 && config.line.layer > 0) {
-              fctx2.clearRect(0, 0, wWidth, wHeight);
-              for (var j = 0, len = lines.length; j < len; j++) {
-                var item = lines[j],
-                  x = item.x,
-                  y = item.y,
-                  width = item.width,
-                  speed = item.speed;
-
-                if (x > wWidth + width * sin) {
-                  x = -width * sin;
-                } else if (x < -width * sin) {
-                  x = wWidth + width * sin;
-                } else {
-                  x += sin * speed;
-                }
-
-                if (y > wHeight + width * cos) {
-                  y = -width * cos;
-                } else if (y < -width * cos) {
-                  y = wHeight + width * cos;
-                } else {
-                  y -= cos * speed;
-                }
-
-                item.x = x;
-                item.y = y;
-                drawLine(x, y, width, item.color, item.alpha);
-              }
-            }
-
-            timer = requestAnimationFrame(animate);
-          };
-
-          var createItem = function () {
-            circles = [];
-            lines = [];
-
-            if (config.circle.amount > 0 && config.circle.layer > 0) {
-              for (var i = 0; i < config.circle.amount / config.circle.layer; i++) {
-                for (var j = 0; j < config.circle.layer; j++) {
-                  circles.push({
-                    x: M.random() * wWidth,
-                    y: M.random() * wHeight,
-                    radius: M.random() * (20 + j * 5) + (20 + j * 5),
-                    color: config.circle.color,
-                    alpha: M.random() * 0.2 + (config.circle.alpha - j * 0.1),
-                    speed: config.speed * (1 + j * 0.5)
-                  });
-                }
-              }
-            }
-
-            if (config.line.amount > 0 && config.line.layer > 0) {
-              for (var m = 0; m < config.line.amount / config.line.layer; m++) {
-                for (var n = 0; n < config.line.layer; n++) {
-                  lines.push({
-                    x: M.random() * wWidth,
-                    y: M.random() * wHeight,
-                    width: M.random() * (20 + n * 5) + (20 + n * 5),
-                    color: config.line.color,
-                    alpha: M.random() * 0.2 + (config.line.alpha - n * 0.1),
-                    speed: config.speed * (1 + n * 0.5)
-                  });
-                }
-              }
-            }
-
-            cancelAnimationFrame(timer);
-            timer = requestAnimationFrame(animate);
-            drawBack();
-          };
-
-          $(document).ready(function () {
-            setCanvasHeight();
-            createItem();
-          });
-
-          $(window).resize(function () {
-            setCanvasHeight();
-            createItem();
-          });
-
-          // Add an event listener for toggling dark mode
-          $('#toggleDarkMode').on('click', function () {
-            isDarkMode = !isDarkMode;
-            createItem(); // Recreate the canvas elements with updated colors
-          });
-
-        }
-      })(jQuery);
-    </script> -->
+    
 
     <script>
       let pre = document.querySelector('#pre-loader');
@@ -1653,9 +1305,6 @@ $('.carousel').flipster({
       }
 
     </script>
-
-
-
 
   </body>
   <script>
@@ -1745,41 +1394,4 @@ $('.carousel').flipster({
     animateValue("destinationsCount", 0, 10994, 20000);
   });
 </script>
-
-
-
-
-
-
-
-</html><!-- New bubble background start -->
-
-
-<!-- <div class="bubbles">
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-
-
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-
-
-
-</div> -->
-<!-- New bubble background end -->
+</html>
