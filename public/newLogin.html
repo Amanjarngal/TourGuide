@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourguide</title>
+
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>TOUR GUIDE</title>
+   <link rel="icon" type="image/x-icon" href="log/favicon.ico">
+   <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+   <!-- styling sheet of login part -->
+   <link rel="stylesheet" href="login.css">
+ 
+ </head>
+ <body>
+  <div class="container" id="container">
+    <div class=" form-container register-container">
+      <form action="#" id="registerForm">
+        <h1>Tour Guide</h1>
+        <input type="text" id="Name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button type="submit"  class="btn btn-style" data-aos="fade-in" id="btn-style">Register</button>
+        <span id="registerMessage" style="display: none;">Account created successfully</span>
+        <div class="social-container">
+          <a href="www.facebook.com" class="social"><i class="lni lni-facebook-fill"></i></a>
+          <a href="www.google.com" class="social"><i class="lni lni-google"></i></a>
+          <a href="www.linkedin.com" class="social"><i class="lni lni-linkedin-original"></i></a>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-container login-container">
+      <form action="#" id="loginForm">
+        <h1>Tour Guide</h1>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <div class="content">
+          <div class="checkbox">
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <label>Remember me</label>
+          </div>
+          <br> <br>
+          <div class="pass-link">
+            <a href="#">Forgot password?</a>
+          </div>
+        </div>
+        <button type="submit">Login</button>
+        <span>or use your account</span>
+        <div class="social-container">
+          <a href="https://www.facebook.com/" class="social"><i class="lni lni-facebook-fill"></i></a>
+          <a href="www.google.com" class="social"><i class="lni lni-google"></i></a>
+          <a href="www.linkedin.com" class="social"><i class="lni lni-linkedin-original"></i></a>
+        </div>
+      </form>
+    </div>
+
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1 class="title">Hello <br> friends</h1>
+          <p>if you have an account, login here and have fun</p>
+          <button class="ghost" id="login">Login
+            <i class="lni lni-arrow-left login"></i>
+          </button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1 class="title">Start your <br> journey now</h1>
+          <p>if you don't have an account yet, join us and start your journey.</p>
+          <button class="ghost" id="register">Register
+            <i class="lni lni-arrow-right register"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="login\script.js"></script>
+  <!-- <script src="email.js"></script> -->
+
+  <!-- <script>
+    document.getElementById('registerForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const name = document.getElementById('registerName').value;
+      const email = document.getElementById('registerEmail').value;
+      const password = document.getElementById('registerPassword').value;
+
+      const response = await fetch('/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const message = response.status === 201 ? 'Account created successfully' : 'Error creating account';
+      document.getElementById('registerMessage').textContent = message;
+      document.getElementById('registerMessage').style.display = 'block';
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      const response = await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const message = response.ok ? 'Logged in successfully' : 'Invalid email or password';
+      document.getElementById('loginMessage').textContent = message;
+      document.getElementById('loginMessage').style.display = 'block';
+    });
+
+    document.getElementById('resetPasswordForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const email = document.getElementById('resetEmail').value;
+      const newPassword = document.getElementById('newPassword').value;
+
+      const response = await fetch('/reset-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, newPassword }),
+      });
+
+      const message = response.ok ? 'Password reset successfully' : 'Error resetting password';
+      document.getElementById('resetMessage').textContent = message;
+      document.getElementById('resetMessage').style.display = 'block';
+    });
+  </script> -->
+</body>
+</html>

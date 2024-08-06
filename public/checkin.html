@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Check-In</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container_form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin-left: 40rem;
+            margin-top:30rem ;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* FOTTER SECTION */
+        .footer {
+  width: 100rem;
+  background-color: #091020;
+  color: white;
+}
+
+
+
+.footer__bar {
+  /* max-width: var(--max-width); */
+  margin: auto;
+  padding: 0.5rem;
+  text-align:center;
+  font-size: 0.8rem;
+  /*   color: var(--secondary-color); */
+  color: var(--extra-light);
+  border-top: 1px solid var(--text-light);
+}
+
+        /*NAV CODE------*/
+        nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #091020;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* z-index: 1001; */
+}
+
+.nav__logo {
+  font-size: 1.8rem;
+  /* Increased font size for the logo */
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  /* border: 2px solid white; */
+}
+
+.nav__logo span {
+  color: #3685fb;
+  /* Assuming this is your primary color */
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+}
+
+ol,
+ul {
+  padding-left: 2rem;
+
+}
+.nav-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  z-index: 9999;
+  
+}
+
+.newNav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+  height: auto;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  list-style: none;
+  gap: 1.2rem;
+  position: relative;
+  top: 0.5rem;
+  z-index: 10;
+}
+
+.link a {
+  position: relative;
+  color: white;
+  font-family: Poppins;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link a::before {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 0%;
+  bottom: -5px;
+  left: 0;
+  background-color: red;
+}
+
+.link a::after {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 0%;
+  top: -5px;
+  right: 0;
+  background-color: red;
+  transition: all 0.2s ease-in-out;
+}
+
+.link a:hover::before {
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.link a:hover::after {
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+
+@media screen and (max-width : 1220px) {
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 70px;
+    background-color: #091020;
+    width: 0%;
+    left: 0;
+    height: 100vh;
+    padding: 2rem 0;
+    flex-direction: column;
+    transition: 0.2s;
+    overflow: hidden;
+  }
+
+  .navLinks li {
+    width: 100%;
+    padding: 0.5rem 0;
+    background-color: #1f2532;
+    z-index: 10;
+  }
+
+  #toggle {
+    font-size: 0.6rem;
+  }
+
+  #btn-style {
+    font-size: 0.6rem;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="newNav">
+            <a href="#" class="nav__logo" data-aos="fade-right" style="text-decoration: none;">Tourguide<span>.</span></a>
+
+            <ul class="navLinks">
+                <li class="link home" data-aos="fade-down"><a href ="index.html">Home</a></li>
+    
+            </ul>
+
+            <a href="index.html#cnt-form" class="contact-btn">
+                <button class="btn aos-init aos-animate" id="btn-style" style="margin: 0;" data-aos="fade-down" fdprocessedid="kglas">Contact Us</button>
+            </a>
+            <div class="hamburger" data-aos="fade-down">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            
+        </nav>
+    </div>
+    <div class="container">
+     <div class="container_form">
+        <h1>Hotel Check-In</h1>
+        <form id="checkInForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="roomType">Room Type:</label>
+            <select id="roomType" name="roomType" required>
+                <option value="single">Single</option>
+                <option value="double">Double</option>
+                <option value="suite">Suite</option>
+            </select>
+            
+            <label for="checkinDate">Check-In Date:</label>
+            <input type="date" id="checkinDate" name="checkinDate" required>
+            
+            <label for="checkoutDate">Check-Out Date:</label>
+            <input type="date" id="checkoutDate" name="checkoutDate" required>
+            
+            <button type="submit">Check In</button>
+        </form>
+        <div id="confirmation" class="hidden">
+            <h2>Check-In Successful</h2>
+            <p id="confirmationMessage"></p>
+        </div>
+    </div>  
+
+      <footer class="footer" data-aos="fade-up">
+        <div class="footer__bar">
+            Copyright © 2023  Aman jarngal . All rights reserved.
+        </div>
+    </footer>
+</div>    
+    
+
+   
+
+    <script>
+        (function () {
+            emailjs.init("P02CDJruifXrsKGB2"); // Replace with your EmailJS user ID
+        })();
+
+        document.getElementById('checkInForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const roomType = document.getElementById('roomType').value;
+            const checkinDate = document.getElementById('checkinDate').value;
+            const checkoutDate = document.getElementById('checkoutDate').value;
+
+            const confirmationMessage = `Thank you, ${name}. Your check-in is confirmed for a ${roomType} room from ${checkinDate} to ${checkoutDate}. We have sent a confirmation email to ${email}.`;
+            
+            document.getElementById('confirmationMessage').textContent = confirmationMessage;
+            
+            document.getElementById('checkInForm').classList.add('hidden');
+            document.getElementById('confirmation').classList.remove('hidden');
+
+            var params = {
+                name: name,
+                email: email,
+                phone: phone,
+                roomType: roomType,
+                checkinDate: checkinDate,
+                checkoutDate: checkoutDate
+            }
+
+            const serviceID = "service_p6h0fhc"; // Replace with your EmailJS service ID
+            const templateID = "template_xoi74qc"; // Replace with your EmailJS template ID
+
+            emailjs.send(serviceID, templateID, params)
+            .then(function(response) {
+                console.log("Success!", response.status, response.text);
+                alert("Confirmation email sent successfully!");
+            }, function(error) {
+                console.log("Failed to send email...", error);
+                alert("Failed to send confirmation email. Please try again later.");
+            });
+        });
+    </script>
+    <script>
+                let hamburger = document.querySelector('.hamburger');
+                hamburger.addEventListener('click', () => {
+                  let list = document.querySelector('.navLinks');
+                  list.classList.toggle('activeHamburger');
+                })
+              </script>
+
+              
+</body>
+</html>

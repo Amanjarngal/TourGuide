@@ -1,0 +1,29 @@
+{
+  "name": "travel_website",
+  "version": "1.0.0",
+  "main": "expres.js",
+  "scripts": {
+    "start": "nodemon expres.js",
+    "serve": "browser-sync start --config bs-config.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "detect-port": "^1.6.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "json2csv": "^6.0.0-alpha.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "nodemon": "^3.1.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
