@@ -1,81 +1,10 @@
-// const express = require('express');
-// const bodyParser = require('body-parser');
-// const path = require('path');
-// const mongoose = require('mongoose');
-// // const bcrypt = require('bcrypt');
-// const cors = require('cors');
-
-// // const { Parser } = require('json2csv');
-// const connectDB = require('./router/db');
-// // const checkout = require('./router/checkout');
-// // const detect = require('detect-port');
-
-
-// const app = express();
-// const port = process.env.PORT || 3000;
-
-
-
-// // Middleware to parse JSON bodies
-// app.use(cors());
-// app.use(bodyParser.json());
-// app.use(express.static('public'));
-// // Middleware to serve static files from 'public' directory
-// // app.use(express.static(path.join(__dirname, 'public')));
-
-
-
-// // HOME PAGE
-// app.get('/', (req, res) => {
-//   const filePath = path.join(__dirname, 'public', 'index.html');
-//   // console.log(`Serving: ${filePath}`);
-//   res.sendFile(filePath);
-// });
-
-// // LOGIN PAGE
-// app.get('/newLogin', (req, res) => {
-//   const filePath = path.join(__dirname, 'public', 'newLogin.html');
-//   // console.log(`Serving: ${filePath}`);
-//   res.sendFile(filePath);
-// });
-
-// // PACKAGE PAGE
-// app.get('/package', (req, res) => {
-//   const filePath = path.join(__dirname, 'public', 'package.html');
-//   // console.log(`Serving: ${filePath}`);
-//   res.sendFile(filePath);
-// });
-
-// // TRENDING PAGE
-// app.get('/trending', (req, res) => {
-//   const filePath = path.join(__dirname, 'public', 'trending.html');
-//   // console.log(`Serving: ${filePath}`);
-//   res.sendFile(filePath);
-// });
-
-// app.get('/checkout', (req, res) => {
-//   const filePath = path.join(__dirname, 'public', 'payment_checkout.html');
-//   // console.log(`Serving: ${filePath}`);
-//   res.sendFile(filePath);
-// });
-
-
-
-// // Connect to MongoDB
-// connectDB();
-
-// app.listen(port, () => {
-//   console.log(`Server running at http://localhost:${port}`);
-// });
-
-
-
 const express = require('express');
 const bodyParser = require('body-parser');
 // const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
+// const Feedback = require('./router/Feedback');
 
 const app = express();
 const PORT = 3000;
@@ -113,17 +42,89 @@ const checkoutSchema = new mongoose.Schema({
 
 const Checkout = mongoose.model('Checkout', checkoutSchema);
 
-const checkinSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  phone: String,
-  roomType: String,
-  checkinDate: Date,
-  checkoutDate: Date
+// const checkinSchema = new mongoose.Schema({
+//   name: String,
+//   email: String,
+//   phone: String,
+//   roomType: String,
+//   checkinDate: Date,
+//   checkoutDate: Date
+// });
+
+// // Define Model
+// const Checkin = mongoose.model('Checkin', checkinSchema);
+
+// Define feedback schema and model
+const feedbackSchema = new mongoose.Schema({
+  navEase: Number,
+  bookingProcess: Number,
+  paymentOptions: Number,
+  customerSupport: Number,
+  recommendation: Number,
+  packageTour: Number,
+  feedbackText: String,
 });
 
-// Define Model
-const Checkin = mongoose.model('Checkin', checkinSchema);
+const Feedback = mongoose.model('Feedback', feedbackSchema);
+
+// Handle POST request for feedback submission
+app.post('/submitFeedback', async (req, res) => {
+  const { navEase, bookingProcess, paymentOptions, customerSupport, recommendation, packageTour, feedbackText } = req.body;
+
+  const newFeedback = new Feedback({
+      navEase,
+      bookingProcess,
+      paymentOptions,
+      customerSupport,
+      recommendation,
+      packageTour,
+      feedbackText,
+  });
+
+  try {
+      await newFeedback.save();
+      res.status(200).json({ message: 'Feedback submitted successfully' });
+  } catch (error) {
+      console.error('Error saving feedback:', error);
+      res.status(500).json({ error: 'Failed to submit feedback' });
+  }
+});
+
+
+// Define a schema for the purchase
+const purchaseSchema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
+  username: String,
+  email: String,
+  address: String,
+  country: String,
+  state: String,
+  paymentMethod: String,
+  cardName: String,
+  cardNumber: String,
+  expiration: String,
+  cvv: String,
+  packageType: String,
+  packagePrice: String
+});
+
+// Create a model from the schema
+const Purchase = mongoose.model('Purchase', purchaseSchema);
+
+// POST endpoint to handle form submission
+app.post('/submitPurchase', (req, res) => {
+  const purchaseData = new Purchase(req.body);
+
+  purchaseData.save()
+      .then(() => {
+          res.json({ message: 'Purchase successfully!' });
+      })
+      .catch(err => {
+          res.status(500).json({ error: 'Failed to purchase.. Try again after sone time..' });
+          console.error('Error:', err);
+      });
+});
 
 
 // Serve the HTML file at the root route
@@ -166,6 +167,11 @@ app.post('/checkout', (req, res) => {
   checkoutData.save()
 });
 
+// app.post('/feedback', (req, res) => {
+//   const feedbackData = new Feedback(req.body);
+  
+//   feedbackData.save()
+// });
 app.post('/checkin', async (req, res) => {
   try {
       const newCheckin = new Checkin(req.body);
