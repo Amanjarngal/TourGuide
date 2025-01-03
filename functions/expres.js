@@ -1,17 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
-// const Feedback = require('./router/Feedback');
+const serverless = require('serverless-http');
+const router = express.Router();
+// const PORT = 3000;
 
-const app = express();
-const PORT = 3000;
+router.use(cors());
+router.use(bodyParser.json());
+router.use(express.static('public')); // Serve static files from the 'public' directory
 
-app.use(cors());
-app.use(bodyParser.json());
-app.use(express.static('public')); // Serve static files from the 'public' directory
+router.get('/', (req, res) => {
+  res.send('Hello, Serverless World!');
+});
 
 // MongoDB connection
 mongoose.connect('mongodb://localhost:27017/tourguide')
@@ -31,10 +33,6 @@ const checkoutSchema = new mongoose.Schema({
   zip: String,
   shippingMethod: String,
   paymentMethod: String,
-  ccName: String,
-  ccNumber: String,
-  ccExpiration: String,
-  ccCVV: String,
   packageCost: String,
   discount: String,
   totalCost: String
@@ -68,7 +66,7 @@ const feedbackSchema = new mongoose.Schema({
 const Feedback = mongoose.model('Feedback', feedbackSchema);
 
 // Handle POST request for feedback submission
-app.post('/submitFeedback', async (req, res) => {
+router.post('/submitFeedback', async (req, res) => {
   const { navEase, bookingProcess, paymentOptions, customerSupport, recommendation, packageTour, feedbackText } = req.body;
 
   const newFeedback = new Feedback({
@@ -101,10 +99,6 @@ const purchaseSchema = new mongoose.Schema({
   country: String,
   state: String,
   paymentMethod: String,
-  cardName: String,
-  cardNumber: String,
-  expiration: String,
-  cvv: String,
   packageType: String,
   packagePrice: String
 });
@@ -113,7 +107,7 @@ const purchaseSchema = new mongoose.Schema({
 const Purchase = mongoose.model('Purchase', purchaseSchema);
 
 // POST endpoint to handle form submission
-app.post('/submitPurchase', (req, res) => {
+router.post('/submitPurchase', (req, res) => {
   const purchaseData = new Purchase(req.body);
 
   purchaseData.save()
@@ -133,36 +127,37 @@ app.post('/submitPurchase', (req, res) => {
 // });
 
 // HOME PAGE
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   const filePath = path.join(__dirname, 'public', 'index.html');
   // console.log(`Serving: ${filePath}`);
   res.sendFile(filePath);
 });
 
 // LOGIN PAGE
-app.get('/newLogin', (req, res) => {
+router.get('/newLogin', (req, res) => {
   const filePath = path.join(__dirname, 'public', 'newLogin.html');
   // console.log(`Serving: ${filePath}`);
   res.sendFile(filePath);
 });
 
 // PACKAGE PAGE
-app.get('/package', (req, res) => {
+router.get('/package', (req, res) => {
   const filePath = path.join(__dirname, 'public', 'package.html');
   // console.log(`Serving: ${filePath}`);
   res.sendFile(filePath);
 });
 
 // TRENDING PAGE
-app.get('/trending', (req, res) => {
+router.get('/trending', (req, res) => {
   const filePath = path.join(__dirname, 'public', 'trending.html');
   // console.log(`Serving: ${filePath}`);
   res.sendFile(filePath);
 });
 
 //CHECK OUT 
-app.post('/checkout', (req, res) => {
+router.post('/checkout', (req, res) => {
   const checkoutData = new Checkout(req.body);
+  
   
   checkoutData.save()
 });
@@ -172,7 +167,7 @@ app.post('/checkout', (req, res) => {
   
 //   feedbackData.save()
 // });
-app.post('/checkin', async (req, res) => {
+router.post('/checkin', async (req, res) => {
   try {
       const newCheckin = new Checkin(req.body);
       await newCheckin.save();
@@ -181,7 +176,9 @@ app.post('/checkin', async (req, res) => {
       res.status(500).json({ message: err.message });
   }
 });
+app.use('/.netlify/functions/indes',router)
+module.exports.handler = serverless(app);
    
- app.listen(PORT, () => {
-   console.log(`Server running at http://localhost:${PORT}`);
- });
+//  app.listen(PORT, () => {
+//    console.log(`Server running at http://localhost:${PORT}`);
+//  });

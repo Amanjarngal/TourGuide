@@ -55,12 +55,12 @@
  
   </script> -->
 
-
+<!-- 
   <style>
     html {
       scroll-behavior: smooth;
     }
-  </style>
+  </style> -->
   <style>
     .active {
       color: red !important;
@@ -271,14 +271,7 @@ body{
                 <h1 class="headingofAbout section__title " data-aos=" fade-in"><b>About Us</b></h1>
                 <!-- Article with about us content -->
                 <article class="w-full text-left format sm:format-base lg:format-lg format-blue dark:format-invert">
-                  <!-- Adding the content -->
-                  <style>
-                    /* CSS for hover effect */
-                    .aboutcontent:hover {
-                      transform: scale(1.8);
-                      transition: transform 0.8s ease;
-                    }
-                  </style>
+                  
                   <p class="aboutcontent" data-aos="fade-in" style="text-align: justify;">
                     <span style="margin-left: 80px;"></span>Welcome to TourGuide, where we firmly believe that life's
                     true purpose unfolds amidst the thrill of exploration, the embrace of the unfamiliar, and the
@@ -442,38 +435,6 @@ body{
       </div>
     </div>
 
-    <!-- slideshow -->
-<!-- <div class="slideshow-container" data-aos="fade-up"> -->
-
-<!-- Next and previous buttons -->
-<!-- <div class="destination__nav">
-      <span onclick="pullSlide(-1)"><i class="ri-arrow-left-s-line"></i></span>
-      <span onclick="pullSlide(1)"><i class="ri-arrow-right-s-line"></i></span>
-    </div> -->
-
-<!-- Full-width images with number and caption text -->
-<!-- <div class="mySlides">
-      <img src="./img/eiffelTower.webp" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <img src="./img/london.jpg" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <img src="./img/goa.jpg" style="width:100%">
-    </div>
-
-        <div class="mySlides">
-          <img src="./img/maldives.jpg" style="width:100%">
-        </div>
-        <div class="imageDots">
-          <span class="active"></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div> -->
     <div class="outer-box">
       <div class="containers">
             
@@ -546,7 +507,7 @@ body{
               <p>Santorini, Aegean Sea</p>
               <div class="rating"><i class="ri-star-fill"></i> 4.2</div>
               <div class="booking__price">
-                <div class="price"><span>From</span>rs 1000</div>
+                <div class="price"><span>From</span> Rs 1000</div>
                 <a href="./dedicated-destinations/santorini-aegean-sea/start.html"><button class="book__now btn-style"
                     style="box-shadow: 2px 2px 8px red;">Book
                     Now</button></a>
@@ -559,7 +520,7 @@ body{
               <p>Machu Picchu, Peru</p>
               <div class="rating"><i class="ri-star-fill"></i> 4.5</div>
               <div class="booking__price">
-                <div class="price"><span>From</span> rs 1200</div>
+                <div class="price"><span>From</span> Rs 1200</div>
                 <a href="./dedicated-destinations/machu-picchu-peru/Machu_start.html"><button
                     class="book__now btn-style" style="box-shadow: 2px 2px 8px red;">Book
                     Now</button></a>
@@ -572,7 +533,7 @@ body{
               <p>Grand Canyon National Park, Arizona</p>
               <div class="rating"><i class="ri-star-fill"></i> 4.7</div>
               <div class="booking__price">
-                <div class="price"><span>From</span> 1200</div>
+                <div class="price"><span>From</span> Rs 1100</div>
                 <a href="./dedicated-destinations/grand-canyon-national-park-arizona/Grand_start.html"><button
                     class="book__now btn-style" style="box-shadow: 2px 2px 8px red;">Book Now</button></a>
               </div>
@@ -976,7 +937,7 @@ $('.carousel').flipster({
               </div>
               <button type="submit" class="btn btn-style" data-aos="fade-in" id="btn-style"
               style="margin-right: 40px;box-shadow: 2px 2px 8px red;">Send</button>
-              <button onclick="window.location.href='feed.html'" class="btn  btn-style" data-aos="fade-in"
+              <button onclick="window.location.href='feedback.html'" class="btn  btn-style" data-aos="fade-in"
                 id="btn-style" style="box-shadow: 2px 2px 8px red;">Feedback</button>
             </form>
           </div>
@@ -984,40 +945,17 @@ $('.carousel').flipster({
       </div>
     </section>
 
-
-<!-- 
-
-    <section class="subscribe" id="Contact">
-      <div class="section__container subscribe__container">
-        <div class="subscribe__content">
-          <h2 class="section__title" data-aos="fade-up">Subscribe to get special prize</h2>
-          <p class="section__subtitle" data-aos="fade-up">
-            Subscribe to get special travel prizes. Unlock exclusive deals and offers just for you.
-          </p>
-        </div>
-        <div class="subscribe__form" data-aos="fade-up">
-          <form id="subscriptionForm">
-            <input type="email" placeholder="Your email here" id="emailInput" required />
-            <button class="btn-send" id="send" type="submit" style="box-shadow: 2px 2px 8px blue;">Subscribe</button>
-          </form>
-          <p id="subscriptionMessage" style="display: none; color: green; margin-top: 10px;">Subscription successful! 🎉</p>
-        </div>
-      </div>
-    </section> -->
-
     <!--DISPLAY SUBSCRIPTION SUCCESS MESSAGE-->
     <script>
       document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent submission
     
-        
-    
         //  success message 
         showSubscriptionMessage();
       });
-    
+      
       function showSubscriptionMessage() {
-        var messageElement = document.getElementById('subscriptionMessage');
+        var messageElement = document.getElementById('news-subscribe');
         messageElement.style.display = 'block';
     
         // Hide message after 4 seconds
@@ -1102,31 +1040,6 @@ $('.carousel').flipster({
           </div>
         
         </div>
-        <!-- <div class="footer__col">
-          <div class="footer__area">
-            <h4 class="footer-head" style="margin-left: -43px;" >Follow Us</h4>
-            <br>
-              <a style="margin-left: -43px;" href="https://www.facebook.com/yourpage" target="_blank" class="footer__link">
-                <i class="fab fa-facebook-f"></i> 
-              </a>
-            
-            
-              <a style="margin-left: -10px;" href="https://twitter.com/ArpanCh40193288" target="_blank" class="footer__link">
-                <i class="fab fa-twitter"></i> 
-              </a>
-            
-            
-              <a style="margin-left: -10px;" href="https://www.instagram.com/anuragbasu1973/" target="_blank" class="footer__link">
-                <i class="fab fa-instagram"></i> 
-              </a>
-            
-            
-              <a style="margin-left: -10px;" href="https://www.linkedin.com/in/arpan-chowdhury-775294251" target="_blank" class="footer__link">
-                <i class="fab fa-linkedin-in"></i> 
-              </a>
-            
-          </div> -->
-        <!-- </div> -->
         
         <div class="footer__col">
           <div id="google_element"></div>
@@ -1152,9 +1065,9 @@ $('.carousel').flipster({
     </footer>
 
 
-
+<!-- .........................GO TO TOP.................... -->
     <a class="goupbtn" href="#" onclick="goToTop()"><i class="fa-solid fa-arrow-up"></i></a>
-
+<!-- .......................................... -->
 <script>
   // Get the button
   var mybutton = document.querySelector(".goupbtn");
